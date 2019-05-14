@@ -42,6 +42,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
 
         if (BmobUser.isLogin()){
             MainActivity.anctionStart(LogInActivity.this);
+            finish();
         }
 
         iniViews();
@@ -168,6 +169,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                 if(e==null){
                     MyToast.MyToast(LogInActivity.this, "登录成功");
                     MainActivity.anctionStart(LogInActivity.this);
+                    finish();
                 }else{
                     MyToast.MyToast(LogInActivity.this, "失败 请检查网络");
                 }

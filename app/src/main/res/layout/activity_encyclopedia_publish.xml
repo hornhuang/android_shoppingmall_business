@@ -14,12 +14,15 @@
         <ImageView
             android:id="@+id/image_1"
             android:layout_width="match_parent"
-            android:layout_height="250dp"/>
+            android:layout_height="250dp"
+            android:src="@drawable/add_picture"
+            android:scaleType="fitXY"/>
 
-        <TextView
+        <EditText
             android:id="@+id/text_1_title"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
+            android:hint="添加标题"
             android:padding="10dp"/>
 
         <ImageView
@@ -29,12 +32,17 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"/>
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/add_picture"
+            android:scaleType="fitXY"/>
 
-        <TextView
+        <EditText
             android:id="@+id/text_2"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:maxLines="5"
+            android:hint="添加文本"
             android:padding="10dp"/>
 
         <ImageView
@@ -44,12 +52,17 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"/>
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/add_picture"
+            android:scaleType="fitXY"/>
 
-        <TextView
+        <EditText
             android:id="@+id/text_3"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:maxLines="5"
+            android:hint="添加文本"
             android:padding="10dp"/>
 
         <ImageView
@@ -59,12 +72,17 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"/>
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/add_picture"
+            android:scaleType="fitXY"/>
 
-        <TextView
+        <EditText
             android:id="@+id/text_4"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:maxLines="5"
+            android:hint="添加文本"
             android:padding="10dp"/>
 
         <ImageView
@@ -74,12 +92,17 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"/>
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/add_picture"
+            android:scaleType="fitXY"/>
 
-        <TextView
+        <EditText
             android:id="@+id/text_5"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:maxLines="5"
+            android:hint="添加文本"
             android:padding="10dp"/>
 
         <ImageView
@@ -89,7 +112,18 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"/>
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/add_picture"
+            android:scaleType="fitXY"/>
+
+        <Button
+            android:id="@+id/publish"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:gravity="center"
+            android:background="@color/colorAccent"
+            android:textColor="@color/white"
+            android:text="提交"/>
 
     </LinearLayout>
 
