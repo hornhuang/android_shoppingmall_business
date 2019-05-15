@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.firstroadbusiness.R;
+import com.example.firstroadbusiness.classes.Comment;
 import com.example.firstroadbusiness.classes.Encyclopedia;
 import com.example.firstroadbusiness.classes.User;
 import com.example.firstroadbusiness.utils.MyToast;
@@ -31,6 +32,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.security.spec.ECParameterSpec;
+import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.BmobUser;
@@ -221,6 +223,7 @@ public class EncyclopediaPublishActivity extends AppCompatActivity implements Vi
                 encyclopedia.setIntroduces(introduces);
                 encyclopedia.setmWriterId(user.getObjectId());
                 encyclopedia.setLinkUser(BmobUser.getCurrentUser(User.class));
+                encyclopedia.setCommentsId(new ArrayList<String>());
                 encyclopedia.setBitmaps(new Bitmap[imageViews.length]);
                 encyclopedia.save(new SaveListener<String>() {
                     @Override
@@ -282,22 +285,6 @@ public class EncyclopediaPublishActivity extends AppCompatActivity implements Vi
                 progressStatus = totalPercent;
             }
         });
-    }
-
-    // 压缩路径下的文件
-    private File imageFactory(String picPath){
-        BitmapFactory.Options o=new BitmapFactory.Options();
-        Bitmap bitmap=BitmapFactory.decodeFile(picPath, o);
-        bitmap=Bitmap.createScaledBitmap(bitmap, 700, 400, false);
-        File root= getExternalCacheDir();
-        File pic=new File(root,objectId + ".jpg");
-        try {
-            FileOutputStream fos=new FileOutputStream(pic);
-            bitmap.compress(Bitmap.CompressFormat.JPEG,50,fos);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return pic;
     }
 
     public void showProgress(View source){

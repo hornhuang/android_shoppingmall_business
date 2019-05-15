@@ -3,23 +3,24 @@ package com.example.firstroadbusiness.activities;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.example.firstroadbusiness.R;
 import com.example.firstroadbusiness.classes.Encyclopedia;
+import com.example.firstroadbusiness.fragments.MainGoodsFragment;
 import com.example.firstroadbusiness.fragments.MaincyClopediaFragment;
-import com.example.firstroadbusiness.fragments.adapters.EncyclopediaAdapter;
+import com.example.firstroadbusiness.fragments.encyclopediaadapter.EncyclopediaAdapter;
 import com.example.firstroadbusiness.pushactivities.EncyclopediaPublishActivity;
 import com.example.firstroadbusiness.pushactivities.GoodsPublishActivity;
 import com.example.firstroadbusiness.pushactivities.RoutesPublishActivity;
@@ -44,24 +45,59 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            adapter = new EncyclopediaAdapter(articalList);
+            adapter = new EncyclopediaAdapter(articalList, MainActivity.this);
             recyclerView.setAdapter(adapter);
             swipeRefreshLayout.setRefreshing(false);
         }
     };
+
+    private BottomNavigationView.OnNavigationItemSelectedListener selectedListener = new BottomNavigationView.OnNavigationItemSelectedListener(){
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            switch (menuItem.getItemId()){
+                case R.id.encycpedia:
+                    replaceFragment(new MaincyClopediaFragment());
+                    break;
+
+                case R.id.goods:
+                    replaceFragment(new MainGoodsFragment());
+                    break;
+
+                case R.id.main:
+
+                    break;
+
+                case R.id.routes:
+
+                    break;
+
+                case R.id.mine:
+
+                    break;
+
+                default:
+
+                    break;
+            }
+            return true;
+        }
+    };
+
+    private void replaceFragment(Fragment fragment){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment, fragment);
+        transaction.commit();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Fragment encyclopedia = new MaincyClopediaFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment, encyclopedia);
-        transaction.commit();
-//        iniViews();
-//        iniRecycler();
-//        iniSwipeReflesh();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(selectedListener);
+        bottomNavigationView.setSelectedItemId(R.id.goods);
         iniFloatButton();
     }
 
@@ -75,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         GridLayoutManager manager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(manager);
         articalList = new ArrayList<>();
-        adapter = new EncyclopediaAdapter(getData());
+        adapter = new EncyclopediaAdapter(getData(),MainActivity.this);
         recyclerView.setAdapter(adapter);
     }
 

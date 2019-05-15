@@ -1,21 +1,18 @@
-package com.example.firstroadbusiness.fragments.adapters;
+package com.example.firstroadbusiness.fragments.encyclopediaadapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.firstroadbusiness.App;
 import com.example.firstroadbusiness.R;
 import com.example.firstroadbusiness.bmobmanager.SuperImageLoader;
 import com.example.firstroadbusiness.classes.Encyclopedia;
-import com.example.firstroadbusiness.pushactivities.EncyclopediaPublishActivity;
 
 import java.util.List;
 

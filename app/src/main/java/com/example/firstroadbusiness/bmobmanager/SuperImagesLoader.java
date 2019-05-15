@@ -8,9 +8,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 
 import com.example.firstroadbusiness.classes.Encyclopedia;
 import com.example.firstroadbusiness.classes.User;
-import com.example.firstroadbusiness.fragments.adapters.EncyclopediaAdapter;
-import com.example.firstroadbusiness.fragments.adapters.UserAdapter;
-import com.example.firstroadbusiness.utils.MyToast;
+import com.example.firstroadbusiness.fragments.encyclopediaadapter.EncyclopediaAdapter;
+import com.example.firstroadbusiness.fragments.baseadapter.UserAdapter;
 
 import java.io.IOException;
 import java.io.InputStream;

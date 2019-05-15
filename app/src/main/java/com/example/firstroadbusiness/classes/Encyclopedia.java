@@ -2,6 +2,8 @@ package com.example.firstroadbusiness.classes;
 
 import android.graphics.Bitmap;
 
+import java.util.List;
+
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobFile;
 
@@ -12,6 +14,7 @@ public class Encyclopedia extends BmobObject {
     private Bitmap bitmaps[];
     private Bitmap userbitmap;
     private int awesomes;
+    private List<String> commentsId;
 
     private User linkUser;
     private String mWriterId;//用于识别LostItem对象的Id,在构造方法中已经初始化
@@ -74,5 +77,13 @@ public class Encyclopedia extends BmobObject {
 
     public void setUserbitmap(Bitmap userbitmap) {
         this.userbitmap = userbitmap;
+    }
+
+    public List<String> getCommentsId() {
+        return commentsId;
+    }
+
+    public void setCommentsId(List<String> commentsId) {
+        this.commentsId = commentsId;
     }
 }

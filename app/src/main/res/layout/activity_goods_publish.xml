@@ -13,27 +13,59 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/goods_image_1"
             android:layout_width="match_parent"
-            android:layout_height="250dp" />
+            android:layout_height="250dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/add_picture"
+            android:scaleType="fitXY" />
 
         <EditText
+            android:id="@+id/goods_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="商品名称"/>
 
         <EditText
+            android:id="@+id/goods_introduce"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="价格"/>
+            android:hint="物品简介" />
 
         <EditText
+            android:id="@+id/goods_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="简介"/>
+            android:hint="价格" />
 
         <ImageView
+            android:id="@+id/goods_image_2"
             android:layout_width="match_parent"
-            android:layout_height="600dp" />
+            android:layout_height="600dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/add_picture"
+            android:scaleType="fitXY" />
+
+        <EditText
+            android:id="@+id/goods_history_introduce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="历史简介" />
+
+        <Button
+            android:id="@+id/push"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:text="上传商品"
+            android:background="@color/coral"
+            android:textSize="23sp"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 

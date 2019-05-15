@@ -4,20 +4,16 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.example.firstroadbusiness.classes.Encyclopedia;
 import com.example.firstroadbusiness.classes.User;
-import com.example.firstroadbusiness.fragments.adapters.EncyclopediaAdapter;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
