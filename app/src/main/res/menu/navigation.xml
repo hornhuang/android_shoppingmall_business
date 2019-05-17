@@ -3,19 +3,19 @@
     <item
         android:id="@+id/encycpedia"
         android:icon="@drawable/ic_launcher_background"
-        android:title="首页" />
+        android:title="百科" />
     <item
         android:id="@+id/goods"
         android:icon="@drawable/ic_launcher_background"
-        android:title="钱包" />
+        android:title="商城" />
     <item
         android:id="@+id/main"
         android:icon="@drawable/ic_launcher_background"
-        android:title="卡片" />
+        android:title="首页" />
     <item
         android:id="@+id/routes"
         android:icon="@drawable/ic_launcher_background"
-        android:title="个人" />
+        android:title="路线" />
     <item
         android:id="@+id/mine"
         android:icon="@drawable/ic_launcher_background"

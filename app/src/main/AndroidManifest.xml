@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragments.goodsadapter.GoodsActivity"></activity>
+        <activity android:name=".fragments.goodsadapter.GoodsActivity" />
         <activity android:name=".fragments.encyclopediaadapter.EncyclopediaDetailActivity" />
         <activity android:name=".pushactivities.RoutesPublishActivity" />
         <activity android:name=".pushactivities.GoodsPublishActivity" />

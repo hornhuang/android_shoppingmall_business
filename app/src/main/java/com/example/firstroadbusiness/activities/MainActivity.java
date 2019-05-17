@@ -19,6 +19,8 @@ import android.view.View;
 import com.example.firstroadbusiness.R;
 import com.example.firstroadbusiness.classes.Encyclopedia;
 import com.example.firstroadbusiness.fragments.MainGoodsFragment;
+import com.example.firstroadbusiness.fragments.MainHomeFragment;
+import com.example.firstroadbusiness.fragments.MainRoutesFragment;
 import com.example.firstroadbusiness.fragments.MaincyClopediaFragment;
 import com.example.firstroadbusiness.fragments.encyclopediaadapter.EncyclopediaAdapter;
 import com.example.firstroadbusiness.pushactivities.EncyclopediaPublishActivity;
@@ -65,11 +67,11 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case R.id.main:
-
+                    replaceFragment(new MainHomeFragment());
                     break;
 
                 case R.id.routes:
-
+                    replaceFragment(new MainRoutesFragment());
                     break;
 
                 case R.id.mine:
