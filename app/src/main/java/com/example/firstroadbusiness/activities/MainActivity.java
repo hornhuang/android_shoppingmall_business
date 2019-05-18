@@ -23,6 +23,7 @@ import com.example.firstroadbusiness.fragments.MainHomeFragment;
 import com.example.firstroadbusiness.fragments.MainRoutesFragment;
 import com.example.firstroadbusiness.fragments.MaincyClopediaFragment;
 import com.example.firstroadbusiness.fragments.encyclopediaadapter.EncyclopediaAdapter;
+import com.example.firstroadbusiness.fragments.routesadapter.MainMineFragment;
 import com.example.firstroadbusiness.pushactivities.EncyclopediaPublishActivity;
 import com.example.firstroadbusiness.pushactivities.GoodsPublishActivity;
 import com.example.firstroadbusiness.pushactivities.RoutesPublishActivity;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case R.id.mine:
-
+                    replaceFragment(new MainMineFragment());
                     break;
 
                 default:
@@ -103,58 +104,8 @@ public class MainActivity extends AppCompatActivity {
         iniFloatButton();
     }
 
-    private void iniViews(){
-        recyclerView = findViewById(R.id.recyclerview);
-        swipeRefreshLayout = findViewById(R.id.refleshlayout);
-
-    }
-
-    private void iniRecycler(){
-        GridLayoutManager manager = new GridLayoutManager(this, 2);
-        recyclerView.setLayoutManager(manager);
-        articalList = new ArrayList<>();
-        adapter = new EncyclopediaAdapter(getData(),MainActivity.this);
-        recyclerView.setAdapter(adapter);
-    }
-
-    private void iniSwipeReflesh(){
-        swipeRefreshLayout.setProgressViewOffset(false, 200, 400);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                swipeRefreshLayout.setRefreshing(true);
-                getData();
-            }
-        });
-    }
-
-    /*
-    从 Bmob 获得所有用户信息
-     */
-    public List<Encyclopedia> getData(){
-        BmobQuery<Encyclopedia> query = new BmobQuery<>();
-        query.setLimit(8).setSkip(0).order("-createdAt")
-                .findObjects(new FindListener<Encyclopedia>() {
-                    @Override
-                    public void done(List<Encyclopedia> object, BmobException e) {
-                        if (e == null) {
-                            articalList.clear();
-                            articalList.addAll(object);
-//                            new EA(adapter, articalList, swipeRefreshLayout).encyclopediaLoad();
-                            Message msg = new Message();
-                            handler.handleMessage(msg);
-                        } else {
-                            MyToast.MyToast(MainActivity.this, "失败，请检查网络" + e.getMessage());
-                        }
-                    }
-                });
-        return articalList;
-    }
-
+    // 设置三个悬浮按钮的监听事件
     private void iniFloatButton(){
-        /*
-        设置三个悬浮按钮的监听事件
-         */
         //
         final FloatingActionButton actionA = (FloatingActionButton) findViewById(R.id.action_a);
         actionA.setOnClickListener(new View.OnClickListener() {

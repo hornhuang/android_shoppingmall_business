@@ -113,11 +113,6 @@ public class EncyclopediaPublishActivity extends AppCompatActivity implements Vi
         button.setOnClickListener(this);
     }
 
-    public static void anctionStart(AppCompatActivity activity){
-        Intent intent = new Intent(activity, EncyclopediaPublishActivity.class);
-        activity.startActivity(intent);
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -243,9 +238,7 @@ public class EncyclopediaPublishActivity extends AppCompatActivity implements Vi
     }
 
     private void upLoadPicture(){
-
         BmobFile.uploadBatch(path, new UploadBatchListener() {
-
             @Override
             public void onSuccess(List<BmobFile> files, List<String> urls) {
                 //1、files-上传完成后的BmobFile集合，是为了方便大家对其上传后的数据进行操作，例如你可以将该文件保存到表中
@@ -321,6 +314,11 @@ public class EncyclopediaPublishActivity extends AppCompatActivity implements Vi
                 progressDialog02.dismiss();
             }
         }.start();
+    }
+
+    public static void anctionStart(AppCompatActivity activity){
+        Intent intent = new Intent(activity, EncyclopediaPublishActivity.class);
+        activity.startActivity(intent);
     }
 
 }

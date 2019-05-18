@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.firstroadbusiness.R;
+import com.example.firstroadbusiness.bmobmanager.FinalImageLoader;
 import com.example.firstroadbusiness.bmobmanager.SuperImageLoader;
 import com.example.firstroadbusiness.classes.Encyclopedia;
 
@@ -58,8 +60,8 @@ public class EncyclopediaAdapter extends RecyclerView.Adapter<EncyclopediaAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final Encyclopedia encyclopedia = mLists.get(i);
-        if (encyclopedia.getBitmaps() != null){
-            viewHolder.imageView.setImageBitmap(encyclopedia.getBitmaps()[0]);
+        if (encyclopedia.getBmobFiles() != null){
+            new FinalImageLoader(viewHolder.imageView, encyclopedia.getBmobFiles()[0]).imageLoad();
         }
         viewHolder.writer_name.setText(encyclopedia.getLinkUser().getFlag());// nikename
 //        viewHolder.awesomes.setText(encyclopedia.getAwesomes());

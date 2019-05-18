@@ -82,6 +82,7 @@ public final class FinalImageLoader {
             @Override
             public void run() {
                 bitmap = getPicture(bmobFile.getUrl());
+                bitmap = Bitmap.createScaledBitmap(bitmap, 700, 400, false);
                 Message message = handler.obtainMessage();
                 message.what = flag;
                 handler.sendMessage(message);
